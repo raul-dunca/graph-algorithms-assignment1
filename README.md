@@ -1,6 +1,23 @@
 # Assignment 01
-- Create a C# Windows Forms application that uses ADO.NET to interact with the database you developed in the 1st semester. The application must contain a form allowing the user to manipulate data in 2 tables that are in a 1:n relationship (parent table and child table). The application must provide the following functionalities:
-– display all the records in the parent table;
-– display the child records for a specific (i.e., selected) parent record;
-– add / remove / update child records for a specific parent record.
-You must use the DataSet and SqlDataAdapter classes. You are free to use any controls on the form.
+- Design and implement an abstract data type directed graph and a function (either a member function or an external one, as your choice) for reading a directed graph from a text file.
+
+- The vertices will be specified as integers from 0 to n-1, where n is the number of vertices.
+
+- Edges may be specified either by the two endpoints (that is, by the source and target), or by some abstract data type Edge_id (that data type may be a pointer or reference to the edge representation, but without exposing the implementation details of the graph).
+
+- Additionally, create a map that associates to an edge an integer value (for instance, a cost).
+
+## Required operations:
+- get the number of vertices;
+- parse (iterate) the set of vertices;
+- given two vertices, find out whether there is an edge from the first one to the second one, and retrieve the Edge_id if there is an edge (the latter is not required if an edge is represented simply as a pair of vertex identifiers);
+- get the in degree and the out degree of a specified vertex;
+- parse (iterate) the set of outbound edges of a specified vertex (that is, provide an iterator). For each outbound edge, the iterator shall provide the Edge_id of the curren edge (or the target vertex, if no Edge_id is used).
+- parse the set of inbound edges of a specified vertex (as above);
+- get the endpoints of an edge specified by an Edge_id (if applicable);
+- retrieve or modify the information (the integer) attached to a specified edge.
+- The graph shall be modifiable: it shall be possible to add and remove an edge, and to add and remove a vertex. Think about what should happen with the properties of existing edges and with the identification of remaining vertices. You may use an abstract Vertex_id instead of an int in order to identify vertices; in this case, provide a way of iterating the vertices of the graph.
+- The graph shall be copyable, that is, it should be possible to make an exact copy of a graph, so that the original can be then modified independently of its copy. Think about the desirable behaviour of an Edge_property attached to the original graph, when a copy is made.
+- Read the graph from a text file (as an external function); see the format below.
+- Write the graph from a text file (as an external function); see the format below.
+- Create a random graph with specified number of vertices and of edges (as an external function).
